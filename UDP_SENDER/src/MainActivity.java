@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,6 +16,14 @@ import java.awt.Container;
 
 public class MainActivity {
 	public static void main(String[] args) {
+		
+		/** Broadcast Discover initialization **/
+		BroadcastDiscover bd = new BroadcastDiscover();
+		bd.disableDebug(); // Now in production environment, comment this line to shush.
+		bd.start();
+		/** Sample function to get all ips **/
+		ArrayList<String> ipList = bd.getDiscovered();
+		// Now ipList should be autoupdated with all ips...
 		
 		GridBagConstraints gc = new GridBagConstraints();
 
